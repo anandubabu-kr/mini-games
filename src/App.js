@@ -1,15 +1,17 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { Container,MainComtainer } from './design/main';
+import { Container,MainContainer } from './design/main';
 import { Home } from './pages/Home';
 import { MemoryGame } from './components/MemoryGame/MemoryGame';
 import { TicTacToe } from './components/TicTacToeGame/TicTacToe';
 import { RockPaperScissors } from './components/RockPaperScissors/RockPaperScissors';
 import { Footer } from './pages/Footer';
+import { NavBar } from './pages/NavBar';
 
 function App() {
   return (
-    <MainComtainer>
+    <MainContainer>
+      <NavBar/>
       <Routes>
         <Route path='/' exact element={<Home/>} />
         <Route path='memory-game' exact element={<MemoryGame/>}/>
@@ -19,14 +21,14 @@ function App() {
         {/* <Route path='' element={}/> */}
       </Routes>
       <Footer/>
-    </MainComtainer>
+    </MainContainer>
   );
 }
 
 
 export const ErrorPage = () => {
   return (
-    <div>Sorry This game is not available</div>
+    <Container>Sorry This game is not available</Container>
   )
 }
 

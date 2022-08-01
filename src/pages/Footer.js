@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container } from '../design/main'
+import { FooterContainer } from '../design/main'
 import { NavLink } from 'react-router-dom'
 
 export const Footer = () => {
   return (
-    <Container>
+    <FooterContainer>
       <NavLink to='/'>Back to Home</NavLink>
-    </Container>
+    </FooterContainer>
   )
 }

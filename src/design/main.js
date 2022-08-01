@@ -10,7 +10,7 @@ export const Container = styled.div`
     justify-content: space-between;
 `
 
-export const MainComtainer = styled(Container)`
+export const MainContainer = styled(Container)`
     height: 100vh;
     width: 100%;
     max-width: none;
@@ -28,4 +28,45 @@ export const GameCanvas = styled.main`
         flex-direction: column;
         
     }
+`
+
+export const FooterContainer = styled(Container)`
+    background-color: var(--dark-green);
+    min-height: 100px;
+    justify-content: center;
+    a{
+        padding:1rem;
+        text-decoration: none;
+        color: white;
+    }
+
+`
+
+export const NavContainer = styled(MainContainer)`
+    flex-direction: row;
+    height: 70px;
+    box-shadow: 0 0 20px black;
+    padding:1rem 3rem;
+
+    &>*{
+        display:flex;
+        align-items: center;
+    }
+    &>div p{
+        margin: 1rem;
+    }
+    &>div svg{
+        animation: App-logo-spin infinite 3s ease-in-out;
+    }
+    &>div img{
+        width:30px;
+    }
+    @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
 `
