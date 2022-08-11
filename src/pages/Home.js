@@ -12,6 +12,9 @@ export const Home = () => {
                     </span>
                     Bambooo Games
                 </h1>
+                <p>
+                    Pick your fevorit game and enjoy !
+                </p>
             </header>
             <menu>
                 <li>
@@ -22,6 +25,9 @@ export const Home = () => {
                 </li>
                 <li>
                     <NavLink to='rock-paper-scissores'>Rock Paper Scissores</NavLink>
+                </li>
+                <li>
+                    <NavLink to='hit-a-mole'>Hit the Mole</NavLink>
                 </li>
             </menu>
         </Container>

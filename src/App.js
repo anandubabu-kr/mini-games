@@ -7,6 +7,8 @@ import { TicTacToe } from './components/TicTacToeGame/TicTacToe';
 import { RockPaperScissors } from './components/RockPaperScissors/RockPaperScissors';
 import { Footer } from './pages/Footer';
 import { NavBar } from './pages/NavBar';
+import HitTheMole from './components/HitTheMole/HitTheMole'
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path='memory-game' exact element={<MemoryGame/>}/>
         <Route path='tic-tac-toe' element={<TicTacToe/>}/>
         <Route path='rock-paper-scissores' element={<RockPaperScissors/>}/>
+        <Route path='hit-a-mole' element={<HitTheMole/>}/>
         <Route path='*' element={<ErrorPage/>}/>
         {/* <Route path='' element={}/> */}
       </Routes>

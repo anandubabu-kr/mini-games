@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Container, GameCanvas } from '../../design/main'
 import { Choices, GameStatusBoard } from '../../design/RockPaperScissores'
-
+import rock from '../../assets/rockPaperScissores/rock.svg'
+import paper from '../../assets/rockPaperScissores/paper.svg'
+import cut from '../../assets/rockPaperScissores/cut.svg'
 
 export const RockPaperScissors = () => {
   useEffect(() => {
@@ -26,8 +28,9 @@ const Game = () => {
   const [result, setResult] = useState('Let\'s Start')
 
 
-  const clickHandler = (e) => {
-    setUserChoice(e.target.id)
+  const clickHandler = (event) => {
+    console.log(event)
+    setUserChoice(event)
     generateComputerChoice()
   }
 
@@ -45,20 +48,21 @@ const Game = () => {
   }
 
   useEffect(() => {
-    if (computerChoice === '' || userChoice === '') return;
-    if (computerChoice === userChoice) {
+    if (computerChoice === '' && userChoice === '') return;
+    let computerchoictext = computerChoice//.text
+    if (computerchoictext === userChoice) {
       setResult('It\'s a draw !!')
-    } else if (computerChoice === 'scissors' && userChoice === 'paper') {
+    } else if (computerchoictext === 'scissors' && userChoice === 'paper') {
       setResult("Computer won 😯\n Hard luck")
-    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+    } else if (userChoice === 'scissors' && computerchoictext === 'paper') {
       setResult("You  won 🤩\n ")
-    } else if (computerChoice === 'rock' && userChoice === 'scissors') {
+    } else if (computerchoictext === 'rock' && userChoice === 'scissors') {
       setResult("Computer won 😯\n Hard luck")
-    } else if (userChoice === 'rock' && computerChoice === 'scissors') {
+    } else if (userChoice === 'rock' && computerchoictext === 'scissors') {
       setResult("You  won 🤩\n ")
-    } else if (computerChoice === 'paper' && userChoice === 'rock') {
+    } else if (computerchoictext === 'paper' && userChoice === 'rock') {
       setResult("Computer won 😯\n Hard luck")
-    } else if (userChoice === 'paper' && computerChoice === 'rock') {
+    } else if (userChoice === 'paper' && computerchoictext === 'rock') {
       setResult("You  won 🤩\n ")
     }
   }, [computerChoice, userChoice])
@@ -66,21 +70,27 @@ const Game = () => {
   return (
     <div>
       <GameStatusBoard>
-        <h3>
+        <div>
           {computerChoice}
-        </h3>
+        </div>
         <h3>
           {result}
-        </h3>
-        <h3>
-          {userChoice}
         </h3>
       </GameStatusBoard>
       <GameCanvas>
         <Choices>
-          <button onClick={clickHandler} id="rock">Rock</button>
-          <button onClick={clickHandler} id="paper">Paper</button>
-          <button onClick={clickHandler} id="scissors">Scissors</button>
+          <button onClick={()=>clickHandler('rock')} >
+            <img src={rock} alt='Rock' />
+            Rock
+          </button>
+          <button onClick={()=>clickHandler('paper')} >
+            <img src={paper} alt='Paper' />
+            Paper
+          </button>
+          <button onClick={()=>clickHandler('scissors')} >
+            <img src={cut} alt='Scissores' />
+            Scissors
+          </button>
         </Choices>
       </GameCanvas>
     </div>
