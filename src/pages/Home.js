@@ -10,7 +10,7 @@ export const Home = () => {
                     <span>
                         Welcome to
                     </span>
-                    Bambooo Games
+                    Paperfan Games
                 </h1>
                 <p>
                     Pick your fevorit game and enjoy !

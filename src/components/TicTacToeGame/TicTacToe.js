@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoardRow, BoardButton } from '../../design/TicTacToe'
+import { BoardRow, BoardButton, MoveButton, MoveList } from '../../design/TicTacToe'
 import { Container, GameCanvas } from '../../design/main'
 
 export const TicTacToe = () => {
@@ -111,7 +111,7 @@ class Game extends React.Component {
       const desc = move ? 'Go to move #' + move : 'Go to game start';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <MoveButton onClick={() => this.jumpTo(move)}>{desc}</MoveButton>
         </li>
       );
     });
@@ -124,18 +124,16 @@ class Game extends React.Component {
     }
 
     return (
-      <GameCanvas>
-        <div className="game-board">
+      <div>
+        <div>{status}</div>
+        <GameCanvas>
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </GameCanvas>
+          <MoveList>{moves}</MoveList>
+        </GameCanvas>
+      </div>
     );
   }
 }

@@ -21,3 +21,21 @@ export const BoardButton = styled.button`
 `
 
 export const Moves = styled.menu``
+
+export const MoveList=styled.ol`
+    list-style: none;
+    padding: 0px;
+    margin: 1rem;
+
+
+`
+export const MoveButton=styled.button`
+    background-color: var(--light-green);
+    width: 100%;
+    padding: .5rem 1rem;
+    border: none;
+    &:hover{
+        background-color: var(--dark-green);
+    }
+
+`

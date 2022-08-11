@@ -3,27 +3,32 @@ import { GameCanvas } from '../../design/main'
 import { cardArray } from '../../data/memorygame'
 import hideItem from '../../assets/gray.png'
 import { GameBoard } from '../../design/MemoryGame'
+const boardArray=cardArray.concat(cardArray)
 
 export const MemoryGame = () => {
     useEffect(() => {
         document.title = 'Memory Game';
-        cardArray.sort(() => 0.5 - Math.random())
+        console.log(boardArray)
+        boardArray.sort(() => 0.5 - Math.random())
+        console.log(boardArray)
 
     }, [])
 
-    const [score, setScore] = useState(0)
-    const [moves, setMoves] = useState(0)
-    const [choices, setChoices] = useState([])
+    // const [score, setScore] = useState(0)
+    // const [moves, setMoves] = useState(0)
+    // const [choices, setChoices] = useState([])
 
-    const chosenCardsIDs = []
+    // const chosenCardsIDs = []
 
     const genarateBoard = () => {
-        return cardArray.map((card, i) => (
+        console.log('----')
+        return boardArray.map((card, i) => (
             <img
                 key={i}
                 src={hideItem}
                 alt='hideItem'
-                id={i}
+                id={card.name}
+                
                 onClick={flipCard} />
         ))
     }
@@ -34,13 +39,16 @@ export const MemoryGame = () => {
 
     }
 
-    const checkMatch = () => {
+    // const checkMatch = () => {
 
-    }
+    // }
+    // const startGame=()=>{
+        const cards = genarateBoard()
 
-    const cards = genarateBoard()
+    // }
     return (
         <GameCanvas>
+                 {/* <button onClick={startGame}>start</button> */}
             <GameBoard>
                 {cards}
             </GameBoard>
