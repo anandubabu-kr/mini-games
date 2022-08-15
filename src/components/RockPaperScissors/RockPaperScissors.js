@@ -28,7 +28,7 @@ const Game = () => {
   const [userChoice, setUserChoice] = useState("");
   const [computerChoice, setComputerChoice] = useState("");
   const [result, setResult] = useState("Let's Start");
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
 
   const clickHandler = (event) => {
     console.log(event);

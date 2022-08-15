@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Container, GameSetMenu } from "../design/main";
-import { useDispatch, useSelector } from "react-redux";
-import { setUserName } from "../services/redux/slices/userSlice";
 
 const gameroutes = [
   {
@@ -24,12 +22,6 @@ const gameroutes = [
 ];
 
 export const Home = () => {
-  const user = useSelector((state) => state.user.user);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(setUserName("The Nice Guy"));
-  }, [dispatch]);
   return (
     <Container>
       <header>
@@ -38,7 +30,6 @@ export const Home = () => {
           paperfan Games
         </h1>
         <p>Pick your fevorit game and enjoy !</p>
-        <p>{user}</p>
       </header>
       <GameSetMenu>
         {gameroutes.map((link, index) => (

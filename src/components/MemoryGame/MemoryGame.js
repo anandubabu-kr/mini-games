@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { GameCanvas } from "../../design/main";
 import { cardArray } from "../../data/memorygame";
 import hideItem from "../../assets/gray.png";

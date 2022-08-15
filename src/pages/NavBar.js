@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavContainer } from "../design/main";
 import avatar from "../assets/avatar.png";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserName } from "../services/redux/slices/userSlice";
+
 export const NavBar = () => {
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setUserName("Thanara ?"));
+  }, [dispatch]);
   return (
     <NavContainer>
       <div>
@@ -17,6 +26,7 @@ export const NavBar = () => {
       </div>
       <div>
         <img src={avatar} alt="User" />
+        <p>{user}</p>
       </div>
     </NavContainer>
   );
