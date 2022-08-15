@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 
 export const Container = styled.div`
@@ -23,7 +23,6 @@ export const GameCanvas = styled.main`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 100%;
     @media screen and (max-width: 400px) {
         flex-direction: column;
         
@@ -69,4 +68,10 @@ export const NavContainer = styled(MainContainer)`
     transform: rotate(720deg);
   }
 }
+`
+
+export const GameSetMenu = styled.menu`
+    &>li{
+        width:100%;
+    }
 `

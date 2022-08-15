@@ -17,8 +17,10 @@ export const Choices = styled.div`
 display: flex;
 align-items: center;
 justify-content: baseline;
-    &>button{
-        width: 100px;
+`
+
+export const ChoiceButton=styled.button`
+    width: 100px;
         height: 100px;
         border-radius: 50%;
         border: none;
@@ -41,5 +43,4 @@ justify-content: baseline;
             max-width: 40px;
             z-index: 1;
         }
-    }
 `

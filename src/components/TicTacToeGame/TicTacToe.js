@@ -1,20 +1,22 @@
-import React from 'react'
-import { BoardRow, BoardButton, MoveButton, MoveList } from '../../design/TicTacToe'
-import { Container, GameCanvas } from '../../design/main'
+import React from "react";
+import {
+  BoardRow,
+  BoardButton,
+  MoveButton,
+  MoveList,
+} from "../../design/TicTacToe";
+import { Container, GameCanvas } from "../../design/main";
 
 export const TicTacToe = () => {
   return (
     <Container>
       <header>
-        <h1>
-          Tic Tac Toe
-        </h1>
+        <h1>Tic Tac Toe</h1>
       </header>
       <Game />
     </Container>
-  )
-}
-
+  );
+};
 
 function Square(props) {
   return (
@@ -83,7 +85,7 @@ class Game extends React.Component {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({
       history: history.concat([
         {
@@ -108,7 +110,7 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
-      const desc = move ? 'Go to move #' + move : 'Go to game start';
+      const desc = move ? "Go to move #" + move : "Go to game start";
       return (
         <li key={move}>
           <MoveButton onClick={() => this.jumpTo(move)}>{desc}</MoveButton>
@@ -118,14 +120,16 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = "Winner: " + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
 
     return (
       <div>
-        <div>{status}</div>
+        <div style={{ textAlign: "center" }}>
+          <p>{status}</p>
+        </div>
         <GameCanvas>
           <Board
             squares={current.squares}

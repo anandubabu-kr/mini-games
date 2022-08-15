@@ -1,35 +1,52 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Container } from '../design/main'
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { Container, GameSetMenu } from "../design/main";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserName } from "../services/redux/slices/userSlice";
+
+const gameroutes = [
+  {
+    title: "Memory Game",
+    path: "memory-game",
+  },
+  {
+    title: "Tic Tack Toe",
+    path: "tic-tac-toe",
+  },
+  {
+    title: "Rock Paper Scissores",
+    path: "rock-paper-scissores",
+  },
+  {
+    title: "Hit the Mole",
+    path: "hit-a-mole",
+  },
+];
 
 export const Home = () => {
-    return (
-        <Container>
-            <header>
-                <h1>
-                    <span>
-                        Welcome to
-                    </span>
-                    Paperfan Games
-                </h1>
-                <p>
-                    Pick your fevorit game and enjoy !
-                </p>
-            </header>
-            <menu>
-                <li>
-                    <NavLink to='memory-game'>MemoryGame</NavLink>
-                </li>
-                <li>
-                    <NavLink to='tic-tac-toe'>Tic Tack Toe</NavLink>
-                </li>
-                <li>
-                    <NavLink to='rock-paper-scissores'>Rock Paper Scissores</NavLink>
-                </li>
-                <li>
-                    <NavLink to='hit-a-mole'>Hit the Mole</NavLink>
-                </li>
-            </menu>
-        </Container>
-    )
-}
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setUserName("The Nice Guy"));
+  }, [dispatch]);
+  return (
+    <Container>
+      <header>
+        <h1>
+          <span>Welcome to</span>
+          paperfan Games
+        </h1>
+        <p>Pick your fevorit game and enjoy !</p>
+        <p>{user}</p>
+      </header>
+      <GameSetMenu>
+        {gameroutes.map((link, index) => (
+          <li key={index}>
+            <NavLink to={link.path}>{link.title}</NavLink>
+          </li>
+        ))}
+      </GameSetMenu>
+    </Container>
+  );
+};
