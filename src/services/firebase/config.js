@@ -9,12 +9,13 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyCt85zzvUsVRFOh3q-HAye2rhcHSfieMUs",
   authDomain: "papargames-fa1d0.firebaseapp.com",
-  databaseURL: "https://papargames-fa1d0-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL:
+    "https://papargames-fa1d0-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "papargames-fa1d0",
   storageBucket: "papargames-fa1d0.appspot.com",
   messagingSenderId: "358989768200",
   appId: "1:358989768200:web:8de7bc0056c39934ad93bd",
-  measurementId: "G-LDFC3FBK42"
+  measurementId: "G-LDFC3FBK42",
 };
 
 // Initialize Firebase
