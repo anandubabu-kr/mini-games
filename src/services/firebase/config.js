@@ -1,11 +1,14 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// Import the functions you need from the SDKs you needs
 // import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "@firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyCt85zzvUsVRFOh3q-HAye2rhcHSfieMUs",
   authDomain: "papargames-fa1d0.firebaseapp.com",
@@ -19,5 +22,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);

@@ -29,7 +29,8 @@ export const GameCanvas = styled.main`
 
 export const FooterContainer = styled(Container)`
   background-color: var(--dark-green);
-  min-height: 100px;
+  max-width: none;
+  min-height: 50px;
   justify-content: center;
   a {
     padding: 1rem;
@@ -43,28 +44,6 @@ export const NavContainer = styled(MainContainer)`
   height: 70px;
   box-shadow: 0 0 20px black;
   padding: 1rem 3rem;
-
-  & > * {
-    display: flex;
-    align-items: center;
-  }
-  & > div p {
-    margin: 1rem;
-  }
-  & > div svg {
-    animation: App-logo-spin infinite 3s ease-in-out;
-  }
-  & > div img {
-    width: 30px;
-  }
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(720deg);
-    }
-  }
 `;
 
 export const GameSetMenu = styled.menu`
