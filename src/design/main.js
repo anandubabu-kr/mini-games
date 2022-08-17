@@ -5,12 +5,12 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   align-items: center;
   justify-content: space-between;
 `;
 
 export const MainContainer = styled(Container)`
-  height: 100vh;
   width: 100%;
   max-width: none;
 `;
@@ -30,7 +30,7 @@ export const GameCanvas = styled.main`
 export const FooterContainer = styled(Container)`
   background-color: var(--dark-green);
   max-width: none;
-  min-height: 50px;
+  height: 50px;
   justify-content: center;
   a {
     padding: 1rem;
@@ -43,7 +43,7 @@ export const NavContainer = styled(MainContainer)`
   flex-direction: row;
   height: 70px;
   box-shadow: 0 0 20px black;
-  padding: 1rem 3rem;
+  padding: 1rem ;
 `;
 
 export const GameSetMenu = styled.menu`

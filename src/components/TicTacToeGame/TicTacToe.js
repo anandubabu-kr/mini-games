@@ -11,9 +11,11 @@ export const TicTacToe = () => {
   return (
     <Container>
       <header>
-        <h1>Tic Tac Toe</h1>
+        <h1 style={{ padding: "0px", marginBottom: "-5px" }}>Tic Tac Toe</h1>
+        <span>Two player game</span>
       </header>
       <Game />
+      <br />
     </Container>
   );
 };

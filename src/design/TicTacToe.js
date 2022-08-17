@@ -26,6 +26,12 @@ export const MoveList = styled.ol`
   list-style: none;
   padding: 0px;
   margin: 1rem;
+  @media screen and (max-width:400px) {
+    height: 100px;
+    overflow: scroll;
+    width: 100%;
+    
+  }
 `;
 export const MoveButton = styled.button`
   background-color: var(--light-green);
