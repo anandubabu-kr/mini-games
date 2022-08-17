@@ -24,6 +24,7 @@ const gameroutes = [
 export const Home = () => {
   return (
     <Container>
+      {/* <LoadingFanFullScreen/> */}
       <header>
         <h1>
           <span>Welcome to</span>

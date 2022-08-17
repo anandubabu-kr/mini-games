@@ -1,30 +1,24 @@
 // import { NavLink } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { NavContainer } from "../design/main";
 import { Brand, USerProfile, Logo } from "../design/Navigation";
 import avatar from "../assets/avatar.png";
-import { useDispatch, useSelector } from "react-redux";
-import { setUserName } from "../services/redux/slices/userSlice";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../services/firebase/config";
+import {  useSelector } from "react-redux";
+// import { setUserName } from "../services/redux/slices/userSlice";
+// import { collection, getDocs } from "firebase/firestore";
+// import { db } from "../services/firebase/config";
 import { NavLink } from "react-router-dom";
 import { SideBarMenu } from "./sideBar";
 
 export const NavBar = () => {
   const user = useSelector((state) => state.user.user);
-  const dispatch = useDispatch();
-  const userCollectionRef = collection(db, "userprofile");
+  // const dispatch = useDispatch();
+  // const userCollectionRef = collection(db, "userprofile");
   const [activateSideBar, setActivateSideBar] = useState(false);
 
-  useEffect(() => {
-    const getUserInfo = async () => {
-      const data = await getDocs(userCollectionRef);
-      const res = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      console.log("--- data ---", res);
-      dispatch(setUserName(res[0].name));
-    };
-    getUserInfo();
-  }, [dispatch, userCollectionRef]);
+  // useEffect(() => {
+  //   // document.title=''
+  // }, []);
 
   return (
     <NavContainer>

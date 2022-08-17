@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, GameCanvas } from "../../design/main";
 import {
   Choices,
@@ -15,21 +15,21 @@ export const RockPaperScissors = () => {
   useEffect(() => {
     document.title = "Rock Paper Scissores";
   });
-  const updateScore = useCallback ((user, computer) => {
+  const updateScore = (user, computer) => {
     const uScore = score.user + user;
     const cScore = score.computer + computer;
 
     setScore({ ...score, user: uScore, computer: cScore });
-  },[score]);
-
+  };
   return (
     <Container>
       <header>
         <h1>Rock Paper Scissores</h1>
-        <div>
-          Your score : {score.user} <br />
-          Computer score: {score.computer}
-        </div>
+      <div>
+        Your score : {score.user}
+        <br />
+        Computer score: {score.computer}
+      </div>
       </header>
       <Game updateScore={updateScore} />
     </Container>
@@ -63,9 +63,10 @@ const Game = ({ updateScore }) => {
     }
   };
 
-  useEffect(() => {
+  function checkResult() {
     if (computerChoice === "" && userChoice === "") return;
     let computerchoictext = computerChoice.choice;
+
     if (computerchoictext === userChoice) {
       setResult("It's a draw !!");
       updateScore(1, 1);
@@ -88,8 +89,11 @@ const Game = ({ updateScore }) => {
       setResult("You  won 🤩\n ");
       updateScore(2, 0);
     }
+  }
+  useEffect(() => {
+    checkResult();
+    //eslint-disable-next-line
   }, [computerChoice, userChoice]);
-
   return (
     <div>
       <GameStatusBoard>

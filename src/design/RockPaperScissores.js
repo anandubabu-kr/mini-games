@@ -30,7 +30,6 @@ export const ChoiceButton = styled.button`
   justify-content: center;
   transition: 0.4s;
   padding: 1rem;
-  z-index: 2;
   &:hover {
     background-color: var(--dark-green);
     color: white;
@@ -40,6 +39,5 @@ export const ChoiceButton = styled.button`
   }
   img {
     max-width: 40px;
-    z-index: 1;
   }
 `;
